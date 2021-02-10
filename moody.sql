@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 10, 2021 at 12:53 PM
+-- Generation Time: Feb 10, 2021 at 02:22 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -21,6 +21,73 @@ SET time_zone = "+00:00";
 --
 -- Database: `moody`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `booking`
+--
+
+CREATE TABLE `booking` (
+  `id` int(11) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `timezoneid` varchar(100) NOT NULL,
+  `slot` varchar(100) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `countryCode` char(5) DEFAULT NULL,
+  `phonenumber` varchar(15) DEFAULT NULL,
+  `age` text,
+  `gender` char(15) DEFAULT NULL,
+  `optional` longtext,
+  `opt` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `booking`
+--
+
+INSERT INTO `booking` (`id`, `date`, `timezoneid`, `slot`, `name`, `email`, `countryCode`, `phonenumber`, `age`, `gender`, `optional`, `opt`) VALUES
+(1, '14/02/2021', 'Central America(GMT-06:00)', '3:00-4:00', 'Dwitrisha', 'dwitrisha@gmail.com', '1', '', '1', 'RNS', '', ''),
+(2, '14/02/2021', 'Central', '3:00-4:00', 'Dwitrisha', 'dwitrisha@gmail.com', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE `bookings` (
+  `id` int(11) NOT NULL,
+  `date` text NOT NULL,
+  `timeZoneId` mediumtext NOT NULL,
+  `slot` text NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `bookings`
+--
+
+INSERT INTO `bookings` (`id`, `date`, `timeZoneId`, `slot`, `username`, `email`) VALUES
+(1, '05/08/2020', 'Central America(GMT-06:00)\r\n\r\n\r\n', '00:00-01:00', 'hoi', 'yy@g'),
+(2, '05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00', 'hoi', 'yy@g'),
+(12, '05/08/2020\r\n\r\n', 'Central America(GMT-06:00)', '00:00-01:00', '', ''),
+(13, '05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00', '', ''),
+(21, '05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00', '', ''),
+(58, '01/08/2020', 'International Date Line West (GMT-12:00)', '15:00-16:00', '32170428', 'ananyathapliyal2303@gmail.com'),
+(59, '30/07/2020', 'International Date Line West (GMT-12:00)', '00:00-01:00', '32170428', 'bachao@god.com'),
+(60, '02/08/2020', 'International Date Line West (GMT-12:00)', '07:00-08:00', '32170428', 'ag@h'),
+(71, '4-8-2020', 'International Date Line West (GMT-12:00)', '3:00-4:00,7:00-8:00', 'abc', 'p@g.c'),
+(72, '4-8-2020', 'International Date Line West (GMT-12:00)', '3:00-4:00,7:00-8:00', 'abc', 'q@g.c'),
+(73, '4-8-2020', 'International Date Line West (GMT-12:00)', '3:00-4:00,7:00-8:00', 'abc', 'r@g.c'),
+(74, '07/08/2020', 'International Date Line West (GMT-12:00)', '01:00-02:00,07:00-08:00,08:00-09:00,15:00-16:00', '32170428', 'trish@gmail.com'),
+(75, '07/08/2020', 'International Date Line West (GMT-12:00)', '07:00-08:00,08:00-09:00,09:00-10:00,15:00-16:00', '32170428', 'ananyathapliyal2303@gmail.com'),
+(76, '05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00,06:00-07:00', '32170428', 'trish@gmail.com'),
+(77, '05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00,06:00-07:00,12:00-13:00', '32170428', 'hi@gmail.com'),
+(78, '	\r\n05/08/2020', 'Central America(GMT-06:00)', '00:00-01:00', '', 'zebra@g'),
+(79, '14/02/2021', 'Central America(GMT-06:00)', '3:00-4:00,7:00-8:00', 'trish', 'trish@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -436,6 +503,18 @@ INSERT INTO `sign` (`id`, `Name`, `Email`, `Password`, `countryCode`, `phone`) V
 --
 
 --
+-- Indexes for table `booking`
+--
+ALTER TABLE `booking`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `happy`
 --
 ALTER TABLE `happy`
@@ -463,6 +542,18 @@ ALTER TABLE `sign`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `booking`
+--
+ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `happy`
