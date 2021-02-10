@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","moody");
+$con = new mysqli("localhost","root","root","moody");
 if (isset($_POST['submit'])){
 
   $Email = $_POST['Email'];

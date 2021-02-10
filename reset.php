@@ -2,7 +2,7 @@
 session_start();
 
 
-$con = new mysqli("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020","moody");
+$con = new mysqli("localhost","root","root","moody");
 if (isset($_POST['submit'])){
 
   $Email = $_POST['Email'];
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])){
 
 
 
-  $email_search = " select * from sign where Email= '$Email'";
+  $email_search = " select * from signup where Email= '$Email'";
   $query = mysqli_query($con,$email_search);
 
   $email_count = mysqli_num_rows($query);
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])){
         if($pass_decode)
     {       $_SESSION["Email"]=$Email;
 
- $sql = "UPDATE sign SET Password='$Pass' WHERE Email='$Email'";
+ $sql = "UPDATE signup SET Password='$Pass' WHERE Email='$Email'";
 if(mysqli_query($con, $sql)){
     echo " Your password was updated successfully.";
     header("Location: index.html");

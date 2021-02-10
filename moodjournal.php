@@ -1,13 +1,3 @@
-<?
-session_start();
-
-if($_SESSION["Email"]==true){
-
-}
-else{
-    header("Location: index.html");
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,11 +24,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset=“UTF-8”>
 
-      <script
-      type="text/javascript"
-      src="https://cdn.weglot.com/weglot.min.js"
-    ></script>
-
+      
       
     <style>
 
@@ -184,25 +170,28 @@ th{
   color:rgb(15, 7, 53);
 }
 
+
 .title{
 
-  width: 70%;
+width: 30%;
 margin-top: 1rem;
-  margin-bottom: 2rem;
+margin-bottom: 2rem;
 }
 
 
 
 @media(min-width: 900px){
- .title{
+.title{
 
-  width: 30%;
+width: 10%;
 margin-top: 1rem;
-  margin-bottom: 2rem;
+margin-bottom: 2rem;
 }
 
 
 }
+
+
 
 
 
@@ -519,7 +508,7 @@ li a:hover {
   
      <div style="text-align: center;">
 
-<img src="title.png" class="title">
+<img src="logo.png" class="title">
 
            <div class="container">
 

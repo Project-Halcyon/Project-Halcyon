@@ -155,9 +155,26 @@
        background-color:rgb(231, 229, 113);
        border: none;
        border-radius: 5px;
-       font-size: 1.5rem;
+       font-size: 1.2rem;
+       height:2rem;
 
    }
+
+   i{
+     margin-left:0.5rem;
+   }
+   .logo{
+        width:10%;
+        margin-left:35rem;
+      }
+
+     @media(max-width:900px)
+     {
+      .logo{
+        width:27%;
+        margin-left:11rem;
+      } 
+     }
 
    .logout:hover{
        color: white;
@@ -186,15 +203,16 @@
   </style>
  <body>
   <div style="text-align:right;">
-  <a href="logout.php">
-  <button class="logout">Logout<br><i class="fa fa-power-off"></i></button></a>
+  <a href="help.html">
+  <button class="logout">Proceed<i class="fa fa-arrow-right"></i></button></a>
   </div>
+  <img src="logo.png" class="logo">
    <div style="text-align:center;">
 	<h4>Refresh for a personalized moodboard!</h4>
 	 </div>
    
   <?php
-$conn = mysqli_connect("healthmatch-server.mysql.database.azure.com","HEALTHMATCH@healthmatch-server","Hackathon2020", "moody");
+$conn = mysqli_connect("localhost","root","root", "moody");
   $sql = "SELECT * FROM `none` WHERE id= FLOOR(RAND()*(97-1+1)+1)";
 $result = $conn->query($sql);
 

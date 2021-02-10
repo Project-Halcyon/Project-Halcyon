@@ -17,10 +17,11 @@ if($Password == $confirm){ echo "";
 
 
 if (!empty($Name) || !empty($Email) || !empty($Password) || !empty($confirm)  )
-{ $host = "healthmatch-server.mysql.database.azure.com";
-  $dbusername = "HEALTHMATCH@healthmatch-server";
-  $dbpassword = "Hackathon2020";
+{ $host = "localhost";
+  $dbusername = "root";
+  $dbpassword = "root";
   $dbname = "moody";
+ 
 
   $conn = new mysqli($host,$dbusername,$dbpassword,$dbname);
   if (mysqli_connect_error())
